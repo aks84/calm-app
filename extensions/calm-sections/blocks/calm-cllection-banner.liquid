@@ -1,0 +1,16 @@
+<div style="text-align: center; padding-bottom: 15px;" class="calm-collection-banner">
+	<h1>{{- collection.title | escape -}}</h1>
+	<p>{{ collection.description }}</p>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection Banner",
+    "target": "section",
+    "stylesheet": "no.css",
+    "javascript": "no.js",
+    "settings": []
+ }
+
+ {% endschema %}

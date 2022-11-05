@@ -1,0 +1,87 @@
+{% render "image-section" %}
+{% schema %}
+  {
+    "name": "Image Section",
+    "target": "section",
+    "stylesheet": "image-section.css",
+    "javascript": "image-section.js",
+    "settings": [
+ 
+        { "label": "Padding Top", "id": "top", "type": "number", "default": 10 },
+        { "label": "Padding Bottom", "id": "bottom", "type": "number", "default": 10},
+        { "label": "Block Background Color", "id": "block_bgc", "type": "color", "default": "#E9E3D6" },
+        { "type": "image_picker", "label": "Select Image", "id": "imagesec1"},
+        { "type": "select", "label": "Crop Image From", "id": "cropimg",   "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "center"},
+         { "type": "select", "label": "Mobile object-fit", "id": "objType",   "options": [
+          {
+            "value": "cover",
+            "label": "cover"
+          },
+          {
+            "value": "scale-down",
+            "label": "scale-down"
+          }
+        ],
+        "default": "cover"},
+        { "label": "Image Height", "id": "imgh", "type": "number", "default": 300 },
+        { "label": "Image Width", "id": "imgw", "type": "number", "default": 1500 },
+        { "label": "Heading", "id": "imageHtwo", "type": "text", "default": "Image Heading Text" },
+        { "type": "select", "label": "Heading Overlay", "id": "h2position",   "options": [
+          {
+            "value": "absolute",
+            "label": "Show"
+          },
+          {
+            "value": "inherit",
+            "label": "Normal"
+          }
+        ],
+        "default": "absolute"},
+
+        { "label": "Heading Color", "id": "h2Color", "type": "color", "default": "#B9B5B5" },
+        { "label": "Heading Size", "id": "h2Size", "type": "range", "default": 25, "min":10, "max":60 },
+        { "label": "H2 Mobile Size", "id": "hmSize", "type": "range", "default": 25, "min":10, "max":60 },
+
+        { "label": "Heading Top", "id": "hTop", "type": "number", "default": 10 },
+        { "label": "Text Top", "id": "textTop", "type": "number", "default": 60 },
+        { "label": "Button Top", "id": "btnTop", "type": "number", "default": 125 },
+
+        { "label": "Text", "id": "imageText", "type": "textarea", "default": "This is demo text for image section.." },
+        { "type": "select", "label": "Text Overlay", "id": "text_position",   "options": [
+          {
+            "value": "absolute",
+            "label": "Show"
+          },
+          {
+            "value": "inherit",
+            "label": "Normal"
+          }
+        ],
+        "default": "absolute"},
+        { "label": "Text Color", "id": "textColor", "type": "color", "default": "#B9B5B5" },
+        { "label": "Text Size", "id": "textSize", "type": "range", "default": 18, "min":10, "max":60 },
+        
+        { "label": "Button Text", "id": "btnTxt", "type": "text", "default": "Shop All" },
+        { "label": "Button Text Size", "id": "btn_txt_size", "type": "number", "default": 20 },
+        { "label": "Button Link", "id": "btnLink", "type": "url"},
+        { "label": "Button Text Color", "id": "btnTxtClr", "type": "color", "default": "#221717" },
+        { "label": "Button BG Color", "id": "btnclr", "type": "color", "default": "#FFFFFF" }
+
+        
+    ]
+  }
+{% endschema %}

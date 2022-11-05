@@ -1,0 +1,112 @@
+
+
+<style>
+
+@media screen and (max-width: 500px) {
+    #calm-img-{{block.id}} .imgh2{
+      font-size: {{block.settings.hmSize}}px !important;
+   		line-height: 1.1;
+    }
+  #calm-img-{{block.id}} .imgpg{
+   line-height: 1.1;
+   font-size: 1rm;
+  }
+
+  #calm-img-{{block.id}} .imageSecDesk{
+		object-fit: {{block.settings.objType}} !important;
+	}
+
+	.img_overlayBox {
+    position: relative;
+    width: 84%;
+    margin: 0 auto;
+	
+	}
+}
+
+
+#calm-img-{{block.id}}{
+	text-align: {{ block.settings.alignAll }}; 
+	padding-top: {{block.settings.top}}px; 
+	padding-bottom: {{block.settings.bottom}}px;
+	background-color: {{block.settings.block_bgc}};
+}
+
+#calm-img-{{block.id}} .img_overlayBox{
+  position: relative;
+}
+
+#calm-img-{{block.id}} .imgh2 {
+  position:{{block.settings.h2position}};
+  text-align:center;
+  top: {{ block.settings.hTop }}px;
+  width: 100%;
+  color: {{ block.settings.h2Color }};
+  font-size: {{ block.settings.h2Size }}px;
+
+     
+}
+	
+
+#calm-img-{{block.id}} .imgpg{
+  position:absolute;
+  text-align:center;
+  top: {{ block.settings.textTop }}px;
+  width: 100%;
+  font-size: {{ block.settings.textSize }}px;
+  color: {{ block.settings.textColor }};
+  position:{{block.settings.text_position}};
+
+
+}
+
+#calm-img-{{block.id}} .imgBtnWrapper{
+  left: 0;
+  position:absolute;
+  text-align:center;
+  width: 100%;
+  top: {{ block.settings.btnTop }}px;
+  
+  }
+
+#calm-img-{{block.id}} .imgBtn{
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: {{block.settings.btnclr}};
+  color: {{block.settings.btnTxtClr}};
+  font-size: {{ block.settings.btn_txt_size }}px;;
+}
+	
+
+#calm-img-{{block.id}} .imageSecDesk{
+	max-width: 100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+	display: block;
+	margin: 0 auto;
+}
+
+
+
+</style>
+
+<div class="calm-app-img" id="calm-img-{{block.id}}">
+
+	 {%-liquid
+        assign image_height = block.settings.imgh
+        assign image_width = block.settings.imgw
+        assign cropFrom = block.settings.cropimg
+     -%}
+
+     <div class="img_overlayBox">
+				<h2 class="imgh2">{{block.settings.imageHtwo }}</h2>
+					<p class="imgpg">{{block.settings.imageText }}</p>
+					<div class="imgBtnWrapper">
+					<a class="imgBtn" href="{{block.settings.btnLink}}">{{block.settings.btnTxt}}</a>
+				</div>
+		 </div>
+	
+	{{ block.settings.imagesec1 | image_url: width: image_width, height: image_height, crop: cropFrom | image_tag: class: 'imageSecDesk', loading: 'lazy', alt: block.settings.imagesec1.alt | escape}}
+
+
+</div>
